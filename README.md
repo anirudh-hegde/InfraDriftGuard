@@ -36,4 +36,13 @@ python3 ansible_remediate.py
 5. **Logstash Integration**
 Set up `logstash.conf` to monitor `remediation_scripts/*.log`.
 
+#### Usually, the default user is elastic and check the password
+```bash
+sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+```
+
+```bash
+logstash -f /home/anirudh/Downloads/InfraDriftGuard/logstash/logstash.conf
+```
+
 All detection and remediation steps are logged for compliance and reporting.
