@@ -1,0 +1,11 @@
+
+- name: Remediate S3 Bucket ACL
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Ensure S3 bucket ACL is private
+      amazon.aws.s3_bucket:
+        name: infra-drift-bucket-example
+        acl: private
+        state: present
